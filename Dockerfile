@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Copy the solution file and restore dependencies
 COPY *.sln .
-COPY ./Back_End_V0.1.API/*.csproj ./Back_End_V0.1.API/
+COPY ./Back_End_V0.1.Api/*.csproj ./Back_End_V0.1.Api/
 COPY ./Back_End_V0.1.DAL/*.csproj ./Back_End_V0.1.DAL/
 COPY ./Back_End_V0.1.Domain/*.csproj ./Back_End_V0.1.Domain/
 RUN dotnet restore
