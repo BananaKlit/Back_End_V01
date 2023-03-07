@@ -1,0 +1,12 @@
+C:\Users\Slinger\Desktop\cheatsheet\BackEndMinimalApiVersion0.1\Back_End_V0.1.Domain\bin\Debug\net6.0\Back_End_V0.1.Domain.deps.json
+C:\Users\Slinger\Desktop\cheatsheet\BackEndMinimalApiVersion0.1\Back_End_V0.1.Domain\bin\Debug\net6.0\Back_End_V0.1.Domain.dll
+C:\Users\Slinger\Desktop\cheatsheet\BackEndMinimalApiVersion0.1\Back_End_V0.1.Domain\bin\Debug\net6.0\Back_End_V0.1.Domain.pdb
+C:\Users\Slinger\Desktop\cheatsheet\BackEndMinimalApiVersion0.1\Back_End_V0.1.Domain\obj\Debug\net6.0\Back_End_V0.1.Domain.csproj.AssemblyReference.cache
+C:\Users\Slinger\Desktop\cheatsheet\BackEndMinimalApiVersion0.1\Back_End_V0.1.Domain\obj\Debug\net6.0\Back_End_V0.1.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Slinger\Desktop\cheatsheet\BackEndMinimalApiVersion0.1\Back_End_V0.1.Domain\obj\Debug\net6.0\Back_End_V0.1.Domain.AssemblyInfoInputs.cache
+C:\Users\Slinger\Desktop\cheatsheet\BackEndMinimalApiVersion0.1\Back_End_V0.1.Domain\obj\Debug\net6.0\Back_End_V0.1.Domain.AssemblyInfo.cs
+C:\Users\Slinger\Desktop\cheatsheet\BackEndMinimalApiVersion0.1\Back_End_V0.1.Domain\obj\Debug\net6.0\Back_End_V0.1.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Slinger\Desktop\cheatsheet\BackEndMinimalApiVersion0.1\Back_End_V0.1.Domain\obj\Debug\net6.0\Back_End_V0.1.Domain.dll
+C:\Users\Slinger\Desktop\cheatsheet\BackEndMinimalApiVersion0.1\Back_End_V0.1.Domain\obj\Debug\net6.0\refint\Back_End_V0.1.Domain.dll
+C:\Users\Slinger\Desktop\cheatsheet\BackEndMinimalApiVersion0.1\Back_End_V0.1.Domain\obj\Debug\net6.0\Back_End_V0.1.Domain.pdb
+C:\Users\Slinger\Desktop\cheatsheet\BackEndMinimalApiVersion0.1\Back_End_V0.1.Domain\obj\Debug\net6.0\ref\Back_End_V0.1.Domain.dll

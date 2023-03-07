@@ -1,0 +1,3 @@
+C:\Users\Slinger\Desktop\cheatsheet\Back_End_V0.1.Domain\bin\Release\net6.0\publish\Back_End_V0.1.Domain.dll
+C:\Users\Slinger\Desktop\cheatsheet\Back_End_V0.1.Domain\bin\Release\net6.0\publish\Back_End_V0.1.Domain.deps.json
+C:\Users\Slinger\Desktop\cheatsheet\Back_End_V0.1.Domain\bin\Release\net6.0\publish\Back_End_V0.1.Domain.pdb

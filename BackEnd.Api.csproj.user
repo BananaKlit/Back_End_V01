@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+     <ProjectReference Include="./Back_End_V0.1.DAL\Back_End_V0.1.DAL.csproj" />
+    <ProjectReference Include="./Back_End_V0.1.Domain\Back_End_V0.1.Domain.csproj" />
+    <ProjectReference Include="./Back_End_V0.1.API\Back_End_V0.1.Api.csproj" />
+  </ItemGroup>
+
+</Project>

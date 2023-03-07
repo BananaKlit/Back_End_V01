@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "BgfCQPR5MFJErFQ8AmZgyWi3H/6p0ExdReN4iRI5hlWFSJeM1l1/Scy1b3zgUgAcF/bz/TF1Q3OoFBra3AZ3bQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Slinger\\Desktop\\cheatsheet\\BackEndMinimalApiVersion0.1\\Back_End_V0.1.Domain\\Back_End_V0.1.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Slinger\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.14\\microsoft.netcore.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\Slinger\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.14\\microsoft.windowsdesktop.app.ref.6.0.14.nupkg.sha512",
+    "C:\\Users\\Slinger\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.14\\microsoft.aspnetcore.app.ref.6.0.14.nupkg.sha512"
+  ],
+  "logs": []
+}
