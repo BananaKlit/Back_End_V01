@@ -21,14 +21,7 @@ builder.Services.AddCors(options =>
             policy.AllowAnyHeader();
         });
 });
-builder.WebHost.ConfigureKestrel(serverOptions =>
-{
-    serverOptions.Listen(IPAddress.Any, 80);
-    serverOptions.Listen(IPAddress.Any, 443, listenOptions =>
-    {
-        listenOptions.UseHttps();
-    });
-});
+
 
 builder.RegisterModules();
 var app = builder.Build();

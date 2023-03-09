@@ -20,10 +20,28 @@ namespace BackEnd.Api.Api.Features.VoitureFeature.Handlers
 
 
 
-        public async Task<GetVoitureDTO> Handle(GetVoitureByIdQuery request, CancellationToken cancellationToken)
+public async Task<GetVoitureDTO> Handle(GetVoitureByIdQuery request, CancellationToken cancellationToken)
+{
+    if (_myContext == null)
+    {
+        // handle the case where _myContext is null
+        throw new Exception("_myContext is null.");
+    }
+
+        var voiture = await _myContext.Voitures
+            ?.Where(b => b.Id_Voiture == request.Id)
+            ?.FirstOrDefaultAsync(cancellationToken);
+
+        if (voiture == null)
         {
-            var voiture = await _myContext.Voitures.FirstOrDefaultAsync(b => b.Id_Voiture == request.Id);
-            return _mapper.Map<GetVoitureDTO>(voiture);
-        }
+            // log the error or throw a custom exception
+            throw new Exception($"Could not find voiture with ID '{request.Id}'.");
+    }
+
+    return _mapper.Map<GetVoitureDTO>(voiture);
+}
+
+
+
     }
 }

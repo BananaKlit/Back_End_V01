@@ -15,13 +15,14 @@ namespace BackEnd.Api.Api.Features.VoitureFeature.Handlers
             _myContext = myContext;
 
         }
-        public async Task<Unit> Handle(UpdateVoitureCommand request, CancellationToken cancellationToken)
-        {
-            var voiture = await _myContext.Voitures!.FirstOrDefaultAsync(a => a.Id_Voiture == request.Id);
-            if (!(voiture == null))
-                voiture.UpdateVoiture(request.Matricule, request.Modele, request.Carburant);
-            await _myContext.SaveChangesAsync();
-            return new Unit();
-        }
+            public async Task<Unit> Handle(UpdateVoitureCommand request, CancellationToken cancellationToken)
+            {
+                var voiture = await _myContext.Voitures!.FirstOrDefaultAsync(a => a.Id_Voiture == request.Id);
+                if (voiture != null){
+                    voiture.UpdateVoiture(request.Matricule!, request.Modele!, request.Carburant!);
+                await _myContext.SaveChangesAsync();
+                }return new Unit();
+            }
     }
 }
+ 

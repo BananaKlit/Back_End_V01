@@ -8,30 +8,86 @@ namespace BackEnd.Api.Api.Features.VoitureFeature.VoitureRepository
 {
     public class VoitureRepo:IVoitureRepo
     {
-        protected readonly MyContext myContext;
-        protected IMapper mapper;
-        public VoitureRepo(MyContext myContext)=>this.myContext=myContext;
+        protected readonly MyContext _mycontext;
+        protected IMapper _mapper;
+         private readonly ILogger<VoitureRepo> _logger;
+       
+       public VoitureRepo(MyContext mycontext, IMapper mapper, ILogger<VoitureRepo> logger)
+{
+    _mycontext = mycontext ?? throw new ArgumentNullException(nameof(mycontext));
+    _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
+    _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+}
 
-        public void AddVoiture(Voiture voiture)=>myContext.Add(voiture);
-        public void Save() => myContext.SaveChangesAsync();
-        public void DeleteVoiture(int id)=> myContext.Voitures.FirstOrDefault(a => a.Id_Voiture == id);
-
-        public void Dispose()
+        public void AddVoiture(Voiture voiture)
         {
-            throw new NotImplementedException();
+            if (voiture == null)
+            {
+                throw new ArgumentNullException(nameof(voiture));
+            }
+
+            _mycontext.Add(voiture);
+        }
+           public async Task Save()
+        {
+            try
+            {
+                await _mycontext.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error saving changes to database");
+                throw;
+            }
+        }
+         public void DeleteVoiture(int id)
+        {
+            var voiture = _mycontext.Voitures?.FirstOrDefault(a => a.Id_Voiture == id);
+
+            if (voiture == null)
+            {
+                throw new ArgumentException($"No voiture found with ID {id}", nameof(id));
+            }
+
+            _mycontext.Remove(voiture);
         }
 
-        public IEnumerable<VoitureDTO> GetAllVoitures() => myContext.Set<VoitureDTO>();
+          public void Dispose()
+        {
+            _mycontext.Dispose();
+        }
+
+         public IEnumerable<VoitureDTO> GetAllVoitures()
+        {
+            return _mycontext.Set<VoitureDTO>();
+        }
 
         public Voiture GetVoitureById(int id)
-        {
+{
+    var voiture = _mycontext?.Voitures?.Find(id);
+    
+    if (voiture == null)
+    {
+        throw new ArgumentException($"Invalid voiture ID: {id}");
+    }
+    
+    return voiture;
+}
 
-            return myContext.Voitures.Find(id);
-        }
 
-        public void UpdateVoiture(Voiture voiture, int id)
-        {
-            throw new NotImplementedException();
-        }
+           public void UpdateVoiture(Voiture voiture, int id)
+{
+    var mycontext =  _mycontext ?? throw new ArgumentNullException(nameof(_mycontext), "DbContext is null");
+
+    var existingVoiture = mycontext.Voitures!.Find(id);
+
+    if (existingVoiture == null)
+    {
+        throw new ArgumentException($"No voiture found with ID {id}", nameof(id));
+    }
+
+    mycontext.Update(existingVoiture);
+}
+    
     }
 }

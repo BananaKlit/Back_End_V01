@@ -21,7 +21,7 @@ namespace BackEnd.Api.Api.Features.VoitureFeature.Handlers
             var voiture = _voitureRepo.GetVoitureById(request.RmVId);
             if (!(voiture == null))
                 _voitureRepo.DeleteVoiture(voiture.Id_Voiture);
-            _voitureRepo.Save();
+            await _voitureRepo.Save();
             return new Unit();
         }
     }

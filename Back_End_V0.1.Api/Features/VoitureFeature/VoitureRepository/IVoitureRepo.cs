@@ -7,7 +7,7 @@ namespace BackEnd.Api.Api.Features.VoitureFeature.VoitureRepository
     {
         IEnumerable<VoitureDTO> GetAllVoitures();
         Voiture GetVoitureById(int id);
-        void Save();
+         Task Save();
         void AddVoiture(Voiture voiture);
         void DeleteVoiture(int id);
         void UpdateVoiture(Voiture voiture, int id);

@@ -14,17 +14,25 @@ namespace BackEnd.Api.Api.Features.VoitureFeature
 {
     public class VoitureModule : IModule
     {
-        private IMediator _mediator;
-        private IMapper _mapper;
+        private IMediator ?_mediator;
+        private IMapper ?_mapper;
         public IEndpointRouteBuilder MapEnpoints(IEndpointRouteBuilder endpoints)
         {
-            new ReadVoituresEndpoint(_mediator,_mapper).RegisterRoutes(endpoints);
+            if (_mediator == null)
+            {
+                throw new ArgumentNullException(nameof(_mediator));
+            }
+
+            if (_mapper == null)
+            {
+                throw new ArgumentNullException(nameof(_mapper));
+            }
+
+            new ReadVoituresEndpoint(_mediator, _mapper).RegisterRoutes(endpoints);
             new WriteVoituresEndpoint(_mediator).RegisterRoutes(endpoints);
             return endpoints;    
-             
-
-
         }
+
 
         public WebApplicationBuilder RegisterModule(WebApplicationBuilder builder)
         {

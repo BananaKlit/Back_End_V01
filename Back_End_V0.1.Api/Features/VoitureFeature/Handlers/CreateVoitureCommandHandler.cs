@@ -24,7 +24,7 @@ namespace BackEnd.Api.Api.Features.VoitureFeature.Handlers
             
             var toAdd = mapper.Map<Voiture>(request.Voiture);
             voitureRepo.AddVoiture(toAdd);
-            voitureRepo.Save();
+            await voitureRepo.Save();
             return toAdd;
         }
     }
