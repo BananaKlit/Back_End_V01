@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: backend-api-deployment
+  name: backend-api-v1-3-deployment
   labels:
-    app: backend-api
+    app: backend-api-v1-3
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: backend-api
+      app: backend-api-v1-3
   template:
     metadata:
       labels:
-        app: backend-api
+        app: backend-api-v1-3
     spec:
       containers:
-      - name: backend-api
-        image: bananaklit/backend.api:latest
+      - name: backend-api-v1-3-container
+        image: bananaklit/backend_api_v_1_3:latest
         ports:
         - containerPort: 80
